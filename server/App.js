@@ -22,8 +22,9 @@ app.use(cors());
 
 //Routes
 
-app.use('/users', require('./Routes/users'));
+app.use('/entry', require('./Routes/users'));
 
 
 
 module.exports=app;
+ 
