@@ -1,10 +1,10 @@
 const express=require('express');
-const { Mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 const router=express.Router();
 
 const User_details=require('../models/User_details')
-router.post('/',(req,res)=>{
-    console.log(req);
+router.post('/',(req,res,next)=>{
+    console.log(req.body);
     
     const user=new User_details({
         id:req.body.id,
