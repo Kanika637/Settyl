@@ -1,64 +1,49 @@
-import React, { useEffect, useState } from "react"
-import axios from 'axios'
-import {Line} from "react-chartjs-2"
-
-const Chart=()=>{
-
-    const[chartData,setChartData]=useState({});
-    const[userId,setUserId]=useState({});
-    const[userFirstName,setUserFirstName]=useState({});
-    const[userLastName,setUserLastName]=useState({});
-    const[userEmail,setUserEmail]=useState({});
+// import React, { useEffect, useState } from "react";
+// import {Chart as ChartJs, ArcElement,Tooltip,Legend} from 'chart.js'
 
 
-const chart=()=>{
-    let firstName=[];
-    let _id=[];
-    let lastName=[];
-    let email=[];
-    axios.get("http://127.0.0.1:3333/entry")
-    .then(res=>{
-        console.log(res);
-        for(const dataObj of res.data.data){
+// import {Chart, Pie} from 'react-chartjs-2'
 
-            _id.push(parseInt(dataObj._id));
-            firstName.push(dataObj.firstName);
-            email.push(dataObj.email);
-            lastName.push(dataObj.lastName);
+// ChartJs.register(ArcElement,Tooltip,Legend);
 
-        }
+// const PieChart=()=>{
 
-    })
-    .catch(err=>{
-        console.log(err)
-    });
+//     const [chart,setChart]=useState({});
 
-    console.log(_id, firstName, lastName, email);
+//     var baseUrl='http://127.0.0.1:3333/entry';
 
-    setChartData({
-        labels:["monday","tuesday","wednesday","thursday","friday"],
-        datasets:[
-            {
-            label:"level of thickness",
-            data:[32,45,12,76,69],
-            backgroundColor:["rgba(75,192,192,0.6"],
-            borderWidth:4
-            }
-        ]
-    })
-    
-}
 
-useEffect(()=>{
-    chart()
-},[])
-return(
-    <div className="app">
-        <div>
-            <Line data={chartData}/>
-        </div>
-    </div>
-)
-}
+//     useEffect(()=>{
 
-export default Chart
+//         const getdata=async()=>{
+//             await fetch('http://127.0.0.1:3333/entry',{
+//                 method:'GET',
+//                 headers:{
+//                     'Content-Type':'application/json',
+//                 }
+//             })
+//             .then((res)=>{
+//                 if(res.ok){
+//                     res.json().then((json)=>{
+//                         console.log(json.data);
+//                         setChart(json.data)
+//                     });
+//                 }
+//             }).catch((error)=>{
+//                 console.log(error);
+//             });
+//         };
+//         getdata()
+//     },[])
+
+
+
+//     console.log('chart',chart);
+//     var data={
+//         labels: chart.UserData,
+//         datasets:[{
+//             data
+//         }]
+
+//     }
+// }

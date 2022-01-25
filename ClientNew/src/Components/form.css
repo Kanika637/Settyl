@@ -31,12 +31,22 @@
     padding-left: 10px;
   }
   .button_sign {
-    background-color: #5f9341;
+    background-color: lightblue;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  .data{
+    background-color: lightblue;
     border-radius: 5px;
     margin-top: 30px;
     padding: 10px;
     font-size: 20px;
+    width: 100%;
   }
+  
   .enter_sign {
     border-radius: 5px;
     padding: 10px;
@@ -103,6 +113,7 @@
   width: 150%;
   margin-left: 2%;
 }
+
 .login{
   margin-left: 10%;
 }

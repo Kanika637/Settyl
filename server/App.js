@@ -19,6 +19,8 @@ mongoose.Promise=global.Promise;
 app.use(morgan('dev'));
 app.use(cors());
 
+app.get('/', (req, res) => {     res.send('Hello, World!'); });
+
 
 
 //Routes

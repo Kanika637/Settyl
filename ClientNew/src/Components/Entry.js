@@ -97,9 +97,18 @@ class Entry extends React.Component {
               placeholder="Enter your Email"
               className="enter_pass"
             ></input>
+
+            
             <button type="submit" name="submit" className="button_sign">
               Submit
             </button>
+
+            <Link to="/data">
+            <button  className="data">
+              Take me to DataTable
+            </button>
+            </Link>
+            
           </form>
         </div>
       </div>
