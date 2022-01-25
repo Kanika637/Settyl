@@ -12,38 +12,38 @@ const columns=[
 
 const DataTable=()=>{
  
-    const [tableData, setTableData] = useState([])
-
-        
+    const [tableData, setTableData] = useState([]);
 
     useEffect(()=>{
         fetch('http://127.0.0.1:3333/entry')
         .then((data)=>data.json())
-        .then((data)=>setTableData(data))
+        .then((data)=>setTableData(data.UserData))
     },[])
-   
-    // tableData=Object.entries(tableData);
-    // tableData=Array.form(tableData)
-console.log(tableData);
 
+
+    
+
+    
+
+ console.log(tableData);
+ 
+
+ 
+ 
 
 
     return(
-        <div  style={{height:600, width:'99%'}}> 
+            <div  style={{height:600, width:'99%'}}> 
             <h1>Data Table</h1>
-            {/* <DataGrid  getRowId={(r) => r._id} rows={tableData} columns={columns}  checkboxSelection/> */}
+            <DataGrid  getRowId={(r) => r._id} rows={tableData} columns={columns}  checkboxSelection/>
 
-            {
-                tableData.map((e)=>{
-                    return (
-                        <div>
-                            {e}
-                        </div>
-                    )
-                })
-            }
+            {/* {obj.map((e)=>{
 
-            
+                return(
+                    {e}
+                )
+
+            })} */}
             </div>
     )
 }
